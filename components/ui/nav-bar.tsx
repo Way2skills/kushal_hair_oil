@@ -40,7 +40,7 @@ export default function NavBar({ activeSection, onNavClick }: NavBarProps) {
               className="object-cover"
             />
           </div>
-          <h1 className="text-xl font-bold text-red-800">Kawishi Herbal Hair Oil</h1>
+          <h1 className="text-xl font-bold text-red-800">Kowishi Herbal Hair Oil</h1>
         </div>
 
         <div className="hidden md:flex space-x-6">
