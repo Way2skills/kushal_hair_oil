@@ -40,6 +40,22 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+        <motion.div
+  initial={{ x: 50, opacity: 0 }}
+  whileInView={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: false, amount: 0.3 }}
+  className="flex justify-center items-center rounded-2xl overflow-hidden"
+>
+  <Image
+    src="Digital nomad-cuate.svg" // ✅ Replace with your actual SVG path
+    alt="Contact Illustration"
+    width={500}
+    height={500}
+    className="object-contain max-h-[500px]"
+  />
+</motion.div>
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -61,8 +77,9 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-bold text-red-800">Get In Touch</h3>
               </div>
 
-              <div className="space-y-6">
-                <motion.div whileHover={{ x: 5 }} className="flex items-start">
+              <div className="">
+                
+                <motion.div whileHover={{ x: 5 }} className="flex items-start w[100%]">
                   <MapPin className="w-6 h-6 text-red-600 mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold text-red-800">Address</h4>
@@ -129,76 +146,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="bg-white rounded-2xl shadow-xl overflow-hidden"
-          >
-            <div className="bg-gradient-to-r from-red-500 to-amber-500 p-6 text-white">
-              <h3 className="text-2xl font-bold">Send us a Message</h3>
-              <p>We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
-            </div>
-
-            <div className="p-8">
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-red-700 mb-1">Your Name</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-red-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-red-700 mb-1">Email Address</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-red-700 mb-1">Your Message</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white h-32 resize-none"
-                    required
-                  ></textarea>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full bg-gradient-to-r from-red-600 to-amber-600 text-white py-3 rounded-md font-semibold flex items-center justify-center space-x-2 ${isSubmitting ? "opacity-75" : "hover:from-red-700 hover:to-amber-700"}`}
-                >
-                  <Send className={`w-5 h-5 ${isSubmitting ? "animate-ping" : "animate-none"}`} />
-                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                </motion.button>
-              </form>
-            </div>
-          </motion.div>
         </div>
 
         <motion.footer

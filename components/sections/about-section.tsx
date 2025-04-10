@@ -91,7 +91,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
         </div>
-
+{/* 
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -119,7 +119,7 @@ export default function AboutSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

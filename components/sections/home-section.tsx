@@ -73,13 +73,13 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             className="mt-16 flex justify-center space-x-4"
           >
             <a
-              href="#"
+              href="https://www.instagram.com/hair_oil_nkl/"
               className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
             >
               <Instagram className="w-6 h-6 text-red-800" />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@Hairoilnkl"
               className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
             >
               <Youtube className="w-6 h-6 text-red-800" />
