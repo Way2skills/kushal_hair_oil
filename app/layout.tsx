@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Hair oil',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'KOWSHI HERBAL HAIR OIL',
+  description: 'We source all our ingredients locally from organic farms to ensure the highest quality. Each batch is prepared with care, following time-tested methods that preserve the natural goodness of herbs.',
+  
 }
 
 export default function RootLayout({
