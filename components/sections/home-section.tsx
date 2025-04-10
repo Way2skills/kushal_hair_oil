@@ -35,7 +35,7 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold mb-6 text-red-800"
           >
-            KAWISHI HERBAL HAIR OIL
+            KOWISHI HERBAL HAIR OIL
           </motion.h1>
 
           <motion.div
