@@ -58,12 +58,12 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8"
           >
-            <div className="relative">
+{/*             <div className="relative">
               <div className="absolute inset-0 bg-yellow-300 rounded-full blur-md"></div>
               <button className="relative bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-500 transform hover:scale-105">
                 Discover Our Products
               </button>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
