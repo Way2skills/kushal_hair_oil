@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { Instagram, Youtube } from "lucide-react"
+import { Instagram, Youtube, Mail, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 
 interface HomeSectionProps {
@@ -35,7 +35,7 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold mb-6 text-red-800"
           >
-            KOWISHI HERBAL HAIR OIL
+            KOWSHI HERBAL HAIR OIL
           </motion.h1>
 
           <motion.div
@@ -58,36 +58,46 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8"
           >
-            <a href="#products">
             <div className="relative">
               <div className="absolute inset-0 bg-yellow-300 rounded-full blur-md"></div>
               <button className="relative bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-500 transform hover:scale-105">
                 Discover Our Products
               </button>
             </div>
-            </a>
           </motion.div>
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 flex justify-center space-x-4"
+            className="mt-16 flex flex-col items-center space-y-4 text-red-800 font-medium"
           >
-            <a
-              href="https://www.instagram.com/hair_oil_nkl/"
-              className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
-            >
-              <Instagram className="w-6 h-6 text-red-800" />
-            </a>
-            <a
-              href="https://www.youtube.com/@Hairoilnkl"
-              className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
-            >
-              <Youtube className="w-6 h-6 text-red-800" />
-            </a>
-            <div className="flex items-center ml-2 text-red-800 font-semibold">
-              <span>Hair_Oil_Nkl</span>
+            <div className="flex items-center space-x-2">
+              <Mail className="w-5 h-5" />
+              <span>herbalhairoil1712@gmail.com</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Phone className="w-5 h-5" />
+              <span>9443958556</span>
+            </div>
+            <div className="flex items-center space-x-4 mt-4">
+              <a
+                href="https://www.instagram.com/hair_oil_nkl?igsh=MWUzYjloZjIydTZxMA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
+              >
+                <Instagram className="w-6 h-6 text-red-800" />
+              </a>
+              <a
+                href="https://www.youtube.com/@Hairoilnkl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
+              >
+                <Youtube className="w-6 h-6 text-red-800" />
+              </a>
+              <span className="text-red-800 font-semibold">Hair_Oil_Nkl</span>
             </div>
           </motion.div>
         </div>
