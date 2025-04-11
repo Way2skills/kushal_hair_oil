@@ -24,7 +24,7 @@ export default function ProductsSection() {
       size: "500ml",
       price: 699,
       description: "Bulk size for dedicated users and families",
-      features: ["Economy pack",  "Special pump dispenser"],
+      features: ["Economy pack",  "Large quantity with quality"],
       color: "green",
     },
   ]
