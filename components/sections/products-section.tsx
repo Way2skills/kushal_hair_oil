@@ -7,24 +7,24 @@ export default function ProductsSection() {
   const products = [
     {
       size: "100ml",
-      price: 499,
+      price: 149,
       description: "Perfect for travel or first-time users",
-      features: ["Travel-friendly", "1-month supply", "Compact design"],
+      features: ["Travel-friendly","Compact design"],
       color: "amber",
     },
     {
       size: "200ml",
-      price: 899,
+      price: 299,
       description: "Our most popular size for regular users",
-      features: ["Best value", "2-3 month supply", "Family favorite"],
+      features: ["Best value", "Family favorite"],
       color: "red",
       featured: true,
     },
     {
       size: "500ml",
-      price: 1999,
+      price: 699,
       description: "Bulk size for dedicated users and families",
-      features: ["Economy pack", "6-month supply", "Special pump dispenser"],
+      features: ["Economy pack",  "Special pump dispenser"],
       color: "green",
     },
   ]
@@ -32,6 +32,7 @@ export default function ProductsSection() {
   return (
     <section className="min-h-screen py-16 flex items-center">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Heading */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -46,6 +47,7 @@ export default function ProductsSection() {
           </p>
         </motion.div>
 
+        {/* Product Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <motion.div
@@ -62,16 +64,11 @@ export default function ProductsSection() {
                   <div className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</div>
                 </div>
               )}
-              <div
-                className={`bg-white rounded-2xl shadow-xl overflow-hidden border-2 ${product.featured ? "border-red-500" : "border-amber-300"}`}
-              >
-                <div
-                  className={`h-48 bg-gradient-to-b from-${product.color}-300 to-${product.color}-500 flex items-center justify-center p-6`}
-                >
+
+              <div className={`bg-white rounded-2xl shadow-xl overflow-hidden border-2 ${product.featured ? "border-red-500" : "border-amber-300"}`}>
+                <div className={`h-48 bg-gradient-to-b from-${product.color}-300 to-${product.color}-500 flex items-center justify-center p-6`}>
                   <div className="relative w-32 h-40">
-                    <div
-                      className={`absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-${product.color}-400 to-${product.color}-600 rounded-lg flex flex-col items-center justify-center p-2`}
-                    >
+                    <div className={`absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-${product.color}-400 to-${product.color}-600 rounded-lg flex flex-col items-center justify-center p-2`}>
                       <div className="text-white font-bold text-xl text-center mb-2">HERBAL HAIR OIL</div>
                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
                         <span className="text-red-800 font-bold text-lg">{product.size}</span>
@@ -88,8 +85,8 @@ export default function ProductsSection() {
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-bold text-red-800">{product.size} Bottle</h3>
                     <div className="flex">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-4 h-4 text-amber-500 fill-amber-500" />
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
                       ))}
                     </div>
                   </div>
@@ -107,14 +104,7 @@ export default function ProductsSection() {
 
                   <div className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-red-800">₹{product.price}</div>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`flex items-center gap-2 ${product.featured ? "bg-red-600" : "bg-amber-500"} text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors`}
-                    >
-                      <ShoppingCart className="w-5 h-5" />
-                      <span>Add to Cart</span>
-                    </motion.button>
+                    
                   </div>
                 </div>
 
@@ -126,6 +116,7 @@ export default function ProductsSection() {
           ))}
         </div>
 
+        {/* Contact Button */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -137,13 +128,14 @@ export default function ProductsSection() {
           <p className="text-red-700">
             For salons, spas, or wholesale inquiries, please contact us directly for special pricing.
           </p>
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
+            href="#contact"
+            className="mt-4 inline-block bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
           >
             Contact for Bulk Orders
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>
