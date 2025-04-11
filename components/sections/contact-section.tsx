@@ -99,7 +99,7 @@ export default function ContactSection() {
                   <Phone className="w-6 h-6 text-red-600 mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold text-red-800">Phone</h4>
-                    <p className="text-red-700">94439 58556, 63835 23969</p>
+                    <p className="text-red-700">94439 58556</p>
                   </div>
                 </motion.div>
 
@@ -107,17 +107,17 @@ export default function ContactSection() {
                   <Mail className="w-6 h-6 text-red-600 mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold text-red-800">Email</h4>
-                    <p className="text-red-700">kawishiherbahoil@gmail.com</p>
+                    <p className="text-red-700">herbalhairoil1712@gmail.com</p>
                   </div>
                 </motion.div>
 
                 <div className="pt-4">
                   <h4 className="font-semibold mb-2 text-red-800">Follow Us</h4>
                   <div className="flex space-x-4">
-                    <motion.a whileHover={{ scale: 1.2 }} href="#" className="bg-amber-200 p-2 rounded-full">
+                    <motion.a whileHover={{ scale: 1.2 }} href="https://www.instagram.com/hair_oil_nkl?igsh=MWUzYjloZjIydTZxMA==" className="bg-amber-200 p-2 rounded-full">
                       <Instagram className="w-6 h-6 text-red-800" />
                     </motion.a>
-                    <motion.a whileHover={{ scale: 1.2 }} href="#" className="bg-amber-200 p-2 rounded-full">
+                    <motion.a whileHover={{ scale: 1.2 }} href="https://www.youtube.com/@Hairoilnkl" className="bg-amber-200 p-2 rounded-full">
                       <Youtube className="w-6 h-6 text-red-800" />
                     </motion.a>
                     <span className="text-red-800 font-semibold ml-2">Hair_Oil_Nkl</span>
@@ -130,8 +130,8 @@ export default function ContactSection() {
             <div className="p-8">
               <div className="bg-yellow-100 rounded-lg p-4 border-l-4 border-amber-500 mb-6">
                 <h4 className="font-bold text-red-800 mb-2">Business Hours</h4>
-                <p className="text-red-700">Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                <p className="text-red-700">Sunday: Closed</p>
+                <p className="text-red-700">Monday - Sunday: 9:00 AM - 6:00 PM</p>
+                {/* <p className="text-red-700">Sunday: Closed</p> */}
               </div>
 
               <h4 className="font-bold text-red-800 mb-2">Our Location</h4>
