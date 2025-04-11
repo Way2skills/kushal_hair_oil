@@ -217,7 +217,7 @@ export default function ContactSection() {
           <p className="font-semibold">
             &copy; {new Date().getFullYear()} Kowishi Herbal Hair Oil. All rights reserved.
           </p>
-          <div className="mt-4 flex justify-center space-x-8">
+{/*           <div className="mt-4 flex justify-center space-x-8">
             <a href="#" className="hover:text-red-600 transition-colors">
               Privacy Policy
             </a>
@@ -227,7 +227,7 @@ export default function ContactSection() {
             <a href="#" className="hover:text-red-600 transition-colors">
               Shipping Info
             </a>
-          </div>
+          </div> */}
         </motion.footer>
       </div>
     </section>
