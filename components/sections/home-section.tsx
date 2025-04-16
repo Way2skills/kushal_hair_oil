@@ -9,7 +9,7 @@ interface HomeSectionProps {
 
 export default function HomeSection({ isLoaded }: HomeSectionProps) {
   return (
-    <section className="min-h-screen flex items-center py-16">
+    <section className="min-h-screen flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           <motion.div
@@ -72,22 +72,31 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-16 flex flex-col items-center space-y-4 text-red-800 font-medium"
           >
-            <div className="flex items-center space-x-2">
-              <Mail className="w-5 h-5" />
-              <span>herbalhairoil1712@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>9443958556</span>
-            </div>
-            <div className="flex items-center space-x-4 mt-4">
+            <div className="flex items-center space-x-6">
               <a
+                href="mailto:herbalhairoil1712@gmail.com"
+                className="flex items-center space-x-2 bg-amber-200 px-4 py-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-105"
+              >
+                <Mail className="w-5 h-5 text-red-800" />
+                <span>herbalhairoil1712@gmail.com</span>
+              </a>
+            </div>
+            
+            <div className="flex items-center space-x-6">
+            <a
                 href="https://www.instagram.com/hair_oil_nkl?igsh=MWUzYjloZjIydTZxMA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-amber-200 p-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-110"
               >
                 <Instagram className="w-6 h-6 text-red-800" />
+              </a>
+              <a
+                href="tel:+919443958556"
+                className="flex items-center space-x-2 bg-amber-200 px-4 py-3 rounded-full hover:bg-amber-300 transition-all transform hover:scale-105"
+              >
+                <Phone className="w-5 h-5 text-red-800" />
+                <span>9443958556</span>
               </a>
               <a
                 href="https://www.youtube.com/@Hairoilnkl"
@@ -97,8 +106,9 @@ export default function HomeSection({ isLoaded }: HomeSectionProps) {
               >
                 <Youtube className="w-6 h-6 text-red-800" />
               </a>
-              <span className="text-red-800 font-semibold">Hair_Oil_Nkl</span>
             </div>
+            
+           
           </motion.div>
         </div>
       </div>

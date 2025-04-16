@@ -1,9 +1,12 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { ShoppingCart, Star } from "lucide-react"
+import { ShoppingCart, Star, Phone, Mail, X } from "lucide-react"
 
 export default function ProductsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const products = [
     {
       size: "100ml",
@@ -31,6 +34,23 @@ export default function ProductsSection() {
       image: "\img_new 1.jpg" // Placeholder for actual product image
     },
   ]
+
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
+  // WhatsApp phone number - replace with your actual number
+  const whatsappNumber = "+919876543210"
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20placing%20a%20bulk%20order%20for%20your%20herbal%20hair%20oil.`
+  
+  // Email address - replace with your actual email
+  const emailAddress = "bulkorders@herbalhair.com"
+  const emailSubject = "Bulk Order Inquiry - Herbal Hair Oil"
+  const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`
 
   return (
     <section className="min-h-screen py-16 flex items-center">
@@ -69,7 +89,7 @@ export default function ProductsSection() {
               )}
 
               <div className={`bg-white rounded-2xl shadow-xl overflow-hidden border-2 ${product.featured ? "border-red-500" : "border-amber-300"}`}>
-                {/* REPLACED SECTION: Product Image Instead of Styled Container */}
+                {/* Product Image */}
                 <div className={`h-48 flex items-center justify-center p-6 bg-${product.color}-100`}>
                   <div className="relative">
                     <img 
@@ -106,7 +126,6 @@ export default function ProductsSection() {
 
                   <div className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-red-800">₹{product.price}</div>
-                    
                   </div>
                 </div>
 
@@ -130,16 +149,83 @@ export default function ProductsSection() {
           <p className="text-red-700">
             For salons, spas, or wholesale inquiries, please contact us directly for special pricing.
           </p>
-          <motion.a
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#contact"
+            onClick={openModal}
             className="mt-4 inline-block bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
           >
             Contact for Bulk Orders
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
+
+      {/* Bulk Order Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-white rounded-xl max-w-md w-full overflow-hidden"
+          >
+            <div className="bg-red-600 p-4 text-white flex justify-between items-center">
+              <h3 className="text-xl font-bold">Contact for Bulk Orders</h3>
+              <button onClick={closeModal} className="text-white hover:text-red-200">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="p-6">
+              <p className="mb-6 text-gray-700">
+                Please contact us through any of the following methods for bulk order inquiries. Our team will get back to you within 24 hours with pricing details.
+              </p>
+              
+              <div className="space-y-6">
+                {/* WhatsApp Contact Link */}
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center p-4 border border-green-500 rounded-lg bg-green-50 hover:bg-green-100 transition-colors"
+                >
+                  <div className="bg-green-500 p-2 rounded-full mr-4">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-green-800">WhatsApp</h4>
+                    <p className="text-green-700">+91 98765 43210</p>
+                    <p className="text-xs text-green-600 mt-1">Click to chat on WhatsApp</p>
+                  </div>
+                </a>
+                
+                {/* Email Contact Link */}
+                <a 
+                  href={emailLink}
+                  className="flex items-center p-4 border border-blue-500 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors"
+                >
+                  <div className="bg-blue-500 p-2 rounded-full mr-4">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-800">Email</h4>
+                    <p className="text-blue-700">{emailAddress}</p>
+                    <p className="text-xs text-blue-600 mt-1">Click to send an email</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <button 
+                  onClick={closeModal}
+                  className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </section>
   )
 }
