@@ -129,9 +129,15 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       animation: {
-        ping: "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        ping: "ping 1s cubic-bezier(0, 0, 0.1, 1) infinite",
+        pulse: "pulse 1s cubic-bezier(0.4, 0, 0.1, 1) infinite",
         bounce: "bounce 1s infinite",
+        "fade-in": "fadeIn 0.5s ease-in-out forwards",
+        "slide-up": "slideUp 0.5s ease-in-out forwards",
+        "slide-down": "slideDown 0.5s ease-in-out forwards",
+        "slide-left": "slideLeft 0.5s ease-in-out forwards",
+        "slide-right": "slideRight 0.5s ease-in-out forwards",
+        "scale-in": "scaleIn 0.5s ease-in-out forwards",
       },
       keyframes: {
         ping: {
@@ -158,6 +164,30 @@ const config: Config = {
             animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideDown: {
+          "0%": { transform: "translateY(-20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideLeft: {
+          "0%": { transform: "translateX(20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideRight: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
       },
     },
   },
@@ -179,6 +209,15 @@ const config: Config = {
     "to-amber-500",
     "from-green-300",
     "to-green-500",
+    "animate-fade-in",
+    "animate-slide-up",
+    "animate-slide-down",
+    "animate-slide-left",
+    "animate-slide-right",
+    "animate-scale-in",
+    "animate-bounce",
+    "animate-pulse",
+    "animate-ping",
   ],
 }
 

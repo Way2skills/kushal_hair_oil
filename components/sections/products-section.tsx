@@ -11,6 +11,7 @@ export default function ProductsSection() {
       description: "Perfect for travel or first-time users",
       features: ["Travel-friendly","Compact design"],
       color: "amber",
+      image: "\img_new_2.jpg" // Placeholder for actual product image
     },
     {
       size: "200ml",
@@ -19,6 +20,7 @@ export default function ProductsSection() {
       features: ["Best value", "Family favorite"],
       color: "red",
       featured: true,
+      image: "\IMG-20250410-WA0017_1_-removebg-preview_20250416_1818260.jpg" // Placeholder for actual product image
     },
     {
       size: "500ml",
@@ -26,6 +28,7 @@ export default function ProductsSection() {
       description: "Bulk size for dedicated users and families",
       features: ["Economy pack",  "Large quantity with quality"],
       color: "green",
+      image: "\img_new 1.jpg" // Placeholder for actual product image
     },
   ]
 
@@ -66,17 +69,16 @@ export default function ProductsSection() {
               )}
 
               <div className={`bg-white rounded-2xl shadow-xl overflow-hidden border-2 ${product.featured ? "border-red-500" : "border-amber-300"}`}>
-                <div className={`h-48 bg-gradient-to-b from-${product.color}-300 to-${product.color}-500 flex items-center justify-center p-6`}>
-                  <div className="relative w-32 h-40">
-                    <div className={`absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-${product.color}-400 to-${product.color}-600 rounded-lg flex flex-col items-center justify-center p-2`}>
-                      <div className="text-white font-bold text-xl text-center mb-2">HERBAL HAIR OIL</div>
-                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                        <span className="text-red-800 font-bold text-lg">{product.size}</span>
-                      </div>
-                      <div className="mt-4 text-white text-sm text-center">
-                        <p>100% NATURAL</p>
-                        <p>CHEMICAL FREE</p>
-                      </div>
+                {/* REPLACED SECTION: Product Image Instead of Styled Container */}
+                <div className={`h-48 flex items-center justify-center p-6 bg-${product.color}-100`}>
+                  <div className="relative">
+                    <img 
+                      src={product.image} 
+                      alt={`Herbal Hair Oil ${product.size}`}
+                      className="h-40 object-contain"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 text-center py-1">
+                      <span className="text-red-800 font-bold">{product.size}</span>
                     </div>
                   </div>
                 </div>
